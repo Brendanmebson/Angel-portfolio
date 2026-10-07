@@ -178,6 +178,22 @@
       form.reportValidity();
       return;
     }
+    var formData = new FormData(form);
+    var message = [
+      'Hello Angel,',
+      '',
+      'My name is ' + formData.get('name') + '.',
+      'Email: ' + formData.get('email'),
+      'Area of interest: ' + formData.get('interest'),
+      'Type of opportunity: ' + formData.get('timeline'),
+      '',
+      'Message:',
+      formData.get('message')
+    ].join('\n');
+    var whatsappUrl = 'https://wa.me/2348151554271?text=' + encodeURIComponent(message);
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    note.textContent = 'Your message is ready in WhatsApp. Please send it to complete your enquiry.';
     note.classList.add('show');
     form.reset();
   });
