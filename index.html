@@ -306,6 +306,80 @@
     background: var(--accent-crimson);
     color: #FFF;
   }
+  .proj-gallery {
+    margin: 22px 0 10px;
+    position: relative;
+  }
+  .proj-gallery-stage {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f4f1ee;
+    border: 1px solid var(--border-delicate);
+    aspect-ratio: 16 / 10;
+  }
+  .proj-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .proj-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .proj-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f6f4f3;
+  }
+  .proj-gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .proj-gallery-btn {
+    border: 1px solid var(--border-delicate);
+    background: #fff;
+    color: var(--text-ink);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+  }
+  .proj-gallery-btn:hover {
+    background: var(--accent-violet);
+    border-color: var(--accent-violet);
+    color: #fff;
+  }
+  .proj-gallery-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .proj-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(31, 29, 36, 0.18);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+  .proj-dot.active {
+    background: var(--accent-crimson);
+    transform: scale(1.1);
+  }
   .proj-modal-header {
     margin-bottom: 20px;
     padding-bottom: 16px;
@@ -506,7 +580,7 @@
       <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-hopewell">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">✦</span><img src="images/pro1.jpg" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">✦</span><img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">HopeWell Health Initiative</h3>
@@ -519,7 +593,7 @@
         </article>
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-superstore">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">▥</span><img src="images/pro2.jpeg" alt="Superstore Sales Data Analysis" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">▥</span><img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">Superstore Sales Analysis</h3>
@@ -635,7 +709,7 @@
       </div>
       <div class="split reveal" style="align-items:start;">
         <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('hopewell')">
-          <img src="images/pro1.jpg" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy">
+          <img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy">
         </div>
         <div class="split-content">
           <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Excel</span><span class="tag">Data Analysis</span><span class="tag">Data Visualization</span><span class="tag">Team Leadership</span></div>
@@ -665,7 +739,7 @@
       </div>
       <div class="split reveal" style="align-items:start;">
         <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('superstore')">
-          <img src="images/pro2.jpeg" alt="Superstore Sales Data Analysis" loading="lazy">
+          <img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy">
         </div>
         <div class="split-content">
           <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Excel</span><span class="tag">Sales Analytics</span><span class="tag">Data Analysis</span></div>
@@ -1059,6 +1133,13 @@
       title: "HopeWell Health Initiative — Data Analysis & Recommendations",
       subtitle: "Data Analytics · Community Health · Team Leadership",
       tags: ["Excel", "Data Analysis", "Data Visualization", "Team Leadership"],
+      images: [
+        "project1/Screenshot%202026-10-10%20at%2019.14.06.png",
+        "project1/Screenshot%202026-10-10%20at%2019.14.25.png",
+        "project1/Screenshot%202026-10-10%20at%2019.14.39.png",
+        "project1/Screenshot%202026-10-10%20at%2019.14.52.png",
+        "project1/Screenshot%202026-10-10%20at%2019.15.15.png"
+      ],
       overview: "A team-based data analytics project completed as part of the Data for Impact Bootcamp, using data from HopeWell Health Initiative, a Nigerian NGO that runs community health outreach programmes.<br><br>The project involved analysing programme data to understand outreach performance, identify key findings, and develop recommendations that could support future programme planning and decision-making.",
       involved: [
         "Cleaning and preparing the programme data",
@@ -1095,6 +1176,11 @@
       title: "Superstore Sales Data Analysis",
       subtitle: "Excel · Sales Analytics · Data Analysis",
       tags: ["Excel", "Sales Analytics", "Data Analysis"],
+      images: [
+        "project2/Screenshot%202026-10-10%20at%2019.16.29.png",
+        "project2/Screenshot%202026-10-10%20at%2019.16.49.png",
+        "project2/Screenshot%202026-10-10%20at%2019.17.03.png"
+      ],
       overview: "This project involved analysing sales data from a superstore to understand sales performance and identify patterns within the business data.<br><br>The analysis focused on using the available sales information to understand what was happening across the business and translate the data into insights and recommendations that could support decision-making.",
       involved: [
         "Reviewing and preparing the sales dataset",
@@ -1171,7 +1257,96 @@
     }
   };
 
+  function buildProjectGallery(images, title) {
+    if (!images || !images.length) return '';
+
+    const slides = images.map((src, index) => `
+      <div class="proj-slide ${index === 0 ? 'active' : ''}" data-index="${index}">
+        <img src="${src}" alt="${title} image ${index + 1}" loading="lazy">
+      </div>
+    `).join('');
+
+    const dots = images.map((_, index) => `
+      <button class="proj-dot ${index === 0 ? 'active' : ''}" type="button" data-index="${index}" aria-label="View image ${index + 1}" aria-pressed="${index === 0}"></button>
+    `).join('');
+
+    return `
+      <div class="proj-gallery" aria-label="${title} gallery">
+        <div class="proj-gallery-stage">${slides}</div>
+        <div class="proj-gallery-controls">
+          <button type="button" class="proj-gallery-btn proj-gallery-prev" aria-label="Previous image">&#8592;</button>
+          <button type="button" class="proj-gallery-btn proj-gallery-next" aria-label="Next image">&#8594;</button>
+        </div>
+        <div class="proj-gallery-dots">${dots}</div>
+      </div>
+    `;
+  }
+
+  function initProjectGallery(gallery) {
+    const slides = Array.from(gallery.querySelectorAll('.proj-slide'));
+    const dots = Array.from(gallery.querySelectorAll('.proj-dot'));
+    const prevBtn = gallery.querySelector('.proj-gallery-prev');
+    const nextBtn = gallery.querySelector('.proj-gallery-next');
+
+    if (!slides.length || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    let autoScroll = null;
+
+    function showSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === currentIndex);
+      });
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === currentIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function stopAutoScroll() {
+      if (autoScroll) {
+        clearInterval(autoScroll);
+        autoScroll = null;
+      }
+    }
+
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScroll = setInterval(() => showSlide(currentIndex + 1), 4000);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+      startAutoScroll();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+      startAutoScroll();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.index));
+        startAutoScroll();
+      });
+    });
+
+    gallery.addEventListener('mouseenter', stopAutoScroll);
+    gallery.addEventListener('mouseleave', startAutoScroll);
+    gallery.__projectGalleryStop = stopAutoScroll;
+
+    showSlide(0);
+    startAutoScroll();
+  }
+
   function openProjectModal(id) {
+    document.querySelectorAll('.proj-gallery').forEach(gallery => {
+      if (gallery.__projectGalleryStop) gallery.__projectGalleryStop();
+    });
+
     const p = PROJECTS_DATA[id];
     if (!p) return;
     
@@ -1184,6 +1359,7 @@
         </div>
       </div>
       <div class="proj-modal-body">
+        ${buildProjectGallery(p.images, p.title)}
         <h4>Project Overview</h4>
         <p>${p.overview}</p>
         
@@ -1244,12 +1420,18 @@
     `;
     
     document.getElementById('projModalContent').innerHTML = html;
+    const gallery = document.querySelector('.proj-gallery');
+    if (gallery) initProjectGallery(gallery);
+
     const modal = document.getElementById('projectModal');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeProjModal() {
+    document.querySelectorAll('.proj-gallery').forEach(gallery => {
+      if (gallery.__projectGalleryStop) gallery.__projectGalleryStop();
+    });
     document.getElementById('projectModal').classList.remove('open');
     document.body.style.overflow = '';
   }
