@@ -380,23 +380,6 @@ main { min-height: 70vh; }
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
 .product-card .frame { aspect-ratio: 3 / 4; }
 .project-frame { position: relative; }
-.project-icon {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: 50%;
-  background: rgba(27, 27, 36, 0.72);
-  color: #FFFFFF;
-  font-size: 15px;
-  line-height: 1;
-  backdrop-filter: blur(6px);
-}
 .product-info { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding-top: 18px; }
 .product-name { font-family: var(--font-editorial); font-size: 24px; font-weight: 500; }
 .product-cat { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; }
@@ -404,8 +387,6 @@ main { min-height: 70vh; }
 .product-card a.card-link { color: inherit; display: block; }
 .product-card { transition: transform 0.45s var(--ease-out-expo); }
 .product-card:hover { transform: translateY(-8px); }
-.product-card:hover .project-icon { background: var(--accent-crimson); border-color: var(--accent-crimson); }
-.material-icon { margin-left: 8px; font-family: var(--font-ui); font-size: 15px; color: var(--accent-crimson); }
 
 /* Philosophy quote band */
 .band-quote { padding: 150px 0; margin: 60px 0 40px; text-align: center; }
@@ -488,6 +469,9 @@ main { min-height: 70vh; }
 .footer-col a { display: inline-block; padding: 5px 0; font-size: 14px; color: var(--text-muted); }
 .footer-col a:hover { color: var(--accent-crimson); }
 .footer-base { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--border-delicate); font-size: 13px; color: var(--text-muted); }
+.footer-base a { color: inherit; }
+.footer-base a.footer-credit-link { color: var(--accent-crimson); }
+.footer-base a:hover { color: var(--accent-crimson); }
 
 /* ============ MOTION SAFETY ============ */
 @media (prefers-reduced-motion: reduce) {

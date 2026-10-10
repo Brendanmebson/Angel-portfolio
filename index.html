@@ -31,17 +31,6 @@
     padding: 0 52px;
     border-right: 1px solid rgba(255,255,255,0.1);
   }
-  .stat-icon {
-    display: grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(167,139,250,0.45);
-    border-radius: 50%;
-    color: var(--accent-violet, #a78bfa);
-    font-size: 1rem;
-  }
   .stat-item:last-child { border-right: none; }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
@@ -537,22 +526,18 @@
   <!-- Stats strip -->
   <div class="stats-strip">
     <div class="stat-item">
-      <span class="stat-icon" aria-hidden="true">✦</span>
       <span class="stat-num">6</span>
       <span class="stat-label">Certifications &amp;<br>Programmes</span>
     </div>
     <div class="stat-item">
-      <span class="stat-icon" aria-hidden="true">⌁</span>
       <span class="stat-num">4</span>
       <span class="stat-label">Focus Areas in<br>Digital Health</span>
     </div>
     <div class="stat-item">
-      <span class="stat-icon" aria-hidden="true">◎</span>
       <span class="stat-num">Nigeria</span>
       <span class="stat-label">Country Ambassador<br>Responsible Digital Health</span>
     </div>
     <div class="stat-item">
-      <span class="stat-icon" aria-hidden="true">♡</span>
       <span class="stat-num">∞</span>
       <span class="stat-label">Questions about<br>Child Health</span>
     </div>
@@ -580,7 +565,7 @@
       <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-hopewell">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">✦</span><img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">HopeWell Health Initiative</h3>
@@ -593,7 +578,7 @@
         </article>
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-superstore">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">▥</span><img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">Superstore Sales Analysis</h3>
@@ -606,7 +591,7 @@
         </article>
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-supplier">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">⌁</span><img src="project3/Screenshot%202026-10-10%20201719.png" alt="Supplier Quality Analysis Dashboard" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project3/Screenshot%202026-10-10%20201719.png" alt="Supplier Quality Analysis Dashboard" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">Supplier Quality Dashboard</h3>
@@ -619,7 +604,7 @@
         </article>
         <article class="product-card reveal">
           <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-jaundice">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><span class="project-icon" aria-hidden="true">♡</span><img src="images/pro4.jpeg" alt="Digital Health Innovation Project" loading="lazy"></div>
+            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="images/pro4.jpeg" alt="Digital Health Innovation Project" loading="lazy"></div>
             <div class="product-info">
               <div>
                 <h3 class="product-name">Digital Health Innovation</h3>
@@ -645,22 +630,22 @@
       </div>
       <div class="materials-grid reveal">
         <div class="material-cell">
-          <span class="material-num">i. <span class="material-icon" aria-hidden="true">▥</span></span>
+          <span class="material-num">i.</span>
           <h3>Data Analytics</h3>
           <p>Excel &middot; Power BI &middot; Data Analysis &middot; Data Visualization &middot; Data Cleaning &mdash; applied to health datasets to surface meaningful insights.</p>
         </div>
         <div class="material-cell">
-          <span class="material-num">ii. <span class="material-icon" aria-hidden="true">♡</span></span>
+          <span class="material-num">ii.</span>
           <h3>Child Health &amp; Health Equity</h3>
           <p>Researching access to care and health equity for children, with a focus on understanding how technology can be applied thoughtfully to real healthcare challenges.</p>
         </div>
         <div class="material-cell">
-          <span class="material-num">iii. <span class="material-icon" aria-hidden="true">⌁</span></span>
+          <span class="material-num">iii.</span>
           <h3>Digital Health &amp; Research</h3>
           <p>Digital Health &middot; Health Research &middot; Health Innovation &middot; Responsible AI &mdash; exploring practical solutions that respond to the realities of the people they are designed to serve.</p>
         </div>
         <div class="material-cell">
-          <span class="material-num">iv. <span class="material-icon" aria-hidden="true">✦</span></span>
+          <span class="material-num">iv.</span>
           <h3>Professional &amp; Leadership</h3>
           <p>Team Leadership &middot; Project Coordination &middot; Communication &middot; Problem Solving &mdash; bringing people and evidence together to move things forward.</p>
         </div>
@@ -1098,6 +1083,8 @@
     <div class="footer-base">
       <span>&copy; <span id="year"></span> Angel Mebuge. All rights reserved.</span>
       <span>Digital Health &amp; Data Analytics &middot; Nigeria</span>
+      <span>Made by <a class="footer-credit-link" href="https://github.com/Brendanmebson" target="_blank" rel="noopener">brendanmebson</a></span>
+      <span>Contact for your website development<br><a class="footer-credit-link" href="mailto:brendanmebson@gmail.com">brendanmebson@gmail.com</a></span>
     </div>
   </div>
 </footer>
