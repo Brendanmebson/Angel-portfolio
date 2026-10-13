@@ -499,7 +499,7 @@ main { min-height: 70vh; }
 @media (max-width: 620px) {
   .container { width: min(100% - 36px, 520px); }
   body { font-size: 15px; }
-  .hero { padding: 20px 0 80px; }
+  .hero { padding: 20px 0 80px; overflow-x: clip; }
   .hero-grid { gap: 42px; }
   .hero-title { font-size: clamp(48px, 14vw, 70px); }
   .hero-copy, .lede { font-size: 16px; }
