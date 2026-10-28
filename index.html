@@ -1,1439 +1,428 @@
 <!DOCTYPE html>
-<!--
-  Angel Mebuge — Digital Health & Data Analytics Portfolio
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Angel Mebuge — Digital Health &amp; Data Analytics</title>
-<meta name="description" content="Angel Mebuge is a Digital Health and Data Analytics professional with a background in Anatomy and Public Health. She works at the intersection of data, child health, and digital innovation in Africa.">
-<meta property="og:title" content="Angel Mebuge — Digital Health &amp; Data Analytics">
-<meta property="og:description" content="Working at the intersection of data, child health, and digital innovation in Africa.">
+<title>Angel Mebuge — Public Health &amp; Data Analytics</title>
+<meta name="description" content="Angel Mebuge is a public health and data analyst in Nigeria. She works on child health, health programme data and responsible digital health tools.">
+<meta property="og:title" content="Angel Mebuge — Public Health &amp; Data Analytics">
+<meta property="og:description" content="Child health, programme data and responsible digital health, from Nigeria.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="images/web/me1.jpg">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="templatemo-628-lumen-style.css">
-<style>
-  /* ── Stats strip ── */
-  .stats-strip {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    background: var(--accent-violet, #9B72CB);
-    padding: 48px 0 44px;
-  }
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 52px;
-    border-right: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat-item:last-child { border-right: none; }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
-    font-weight: 500;
-    color: #FFFFFF;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .stat-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-top: 8px;
-    text-align: center;
-  }
-  @media (max-width: 640px) {
-    .stats-strip { flex-wrap: wrap; gap: 32px 0; padding: 40px 24px; }
-    .stat-item { border-right: none; padding: 0 28px; width: 50%; }
-  }
-  @media (max-width: 380px) {
-    .stats-strip { padding-left: 8px; padding-right: 8px; }
-    .stat-item { padding-left: 12px; padding-right: 12px; }
-  }
-
-  /* ── Tag chips on portfolio cards ── */
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 10px;
-  }
-  .tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 100px;
-    background: rgba(167,139,250,0.12);
-    color: var(--accent-violet, #a78bfa);
-    border: 1px solid rgba(167,139,250,0.25);
-  }
-
-  /* ── Timeline-style certifications ── */
-  .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin-top: 16px;
-  }
-  .cert-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 28px 24px 24px;
-    position: relative;
-    transition: border-color 0.25s, transform 0.25s;
-  }
-  .cert-card:hover {
-    border-color: rgba(167,139,250,0.4);
-    transform: translateY(-3px);
-  }
-  .cert-year-badge {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 100px;
-    background: rgba(167,139,250,0.15);
-    color: var(--accent-violet, #a78bfa);
-    margin-bottom: 14px;
-  }
-  .cert-card h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.35;
-  }
-  .cert-card p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    opacity: 0.65;
-    margin: 0;
-  }
-  .cert-issuer {
-    margin-top: 12px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.4;
-  }
-  /* ── Cert cards with image ── */
-  .cert-card--has-img {
-    cursor: pointer;
-    padding-top: 0;
-    overflow: hidden;
-  }
-  .cert-img-wrap {
-    position: relative;
-    width: calc(100% + 48px);
-    margin: 0 -24px 20px;
-    overflow: hidden;
-    max-height: 180px;
-  }
-  .cert-img-wrap img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(0.92);
-  }
-  .cert-card--has-img:hover .cert-img-wrap img {
-    transform: scale(1.04);
-    filter: brightness(1);
-  }
-  .cert-view-label {
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: rgba(167,139,250,0.85);
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 100px;
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-  .cert-card--has-img:hover .cert-view-label {
-    opacity: 1;
-  }
-  .cert-card--has-img:focus-visible {
-    outline: 2px solid var(--accent-violet, #a78bfa);
-    outline-offset: 3px;
-  }
-
-  /* ── Certificate lightbox ── */
-  .cert-lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: rgba(10, 10, 15, 0.92);
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    backdrop-filter: blur(10px);
-  }
-  .cert-lightbox.open {
-    display: flex;
-  }
-  .cert-lightbox-inner {
-    position: relative;
-    max-width: 92vw;
-    max-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    animation: lbIn 0.28s cubic-bezier(.16, 1, .3, 1);
-  }
-  @keyframes lbIn {
-    from { opacity: 0; transform: scale(0.92); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-  .cert-lightbox-inner img {
-    max-width: 100%;
-    max-height: 82vh;
-    object-fit: contain;
-    border-radius: 8px;
-    display: block;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.7);
-  }
-  .cert-lightbox-title {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-  .cert-lightbox-close {
-    position: absolute;
-    top: -46px;
-    right: 0;
-    background: rgba(255,255,255,0.15);
-    border: none;
-    color: #fff;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-  }
-  .cert-lightbox-close:hover { background: var(--accent-crimson); }
-
-  /* ── Project details modal ── */
-  .proj-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    background: rgba(15, 15, 20, 0.85);
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    backdrop-filter: blur(6px);
-  }
-  .proj-modal.open {
-    display: flex;
-  }
-  .proj-modal-inner {
-    position: relative;
-    max-width: 800px;
-    width: 100%;
-    max-height: 88vh;
-    background: #FFFFFF;
-    border-radius: 12px;
-    overflow-y: auto;
-    box-shadow: 0 30px 90px rgba(0,0,0,0.4);
-    animation: projIn 0.3s cubic-bezier(.16, 1, .3, 1);
-    padding: 36px 32px;
-  }
-  @keyframes projIn {
-    from { opacity: 0; transform: translateY(20px) scale(0.96); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-  }
-  .proj-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.06);
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-ink);
-    transition: background 0.2s, color 0.2s;
-  }
-  .proj-modal-close:hover {
-    background: var(--accent-crimson);
-    color: #FFF;
-  }
-  .proj-gallery {
-    margin: 22px 0 10px;
-    position: relative;
-  }
-  .proj-gallery-stage {
-    position: relative;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #f4f1ee;
-    border: 1px solid var(--border-delicate);
-    aspect-ratio: 16 / 10;
-  }
-  .proj-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-  }
-  .proj-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .proj-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #f6f4f3;
-  }
-  .proj-gallery-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-  }
-  .proj-gallery-btn {
-    border: 1px solid var(--border-delicate);
-    background: #fff;
-    color: var(--text-ink);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
-  }
-  .proj-gallery-btn:hover {
-    background: var(--accent-violet);
-    border-color: var(--accent-violet);
-    color: #fff;
-  }
-  .proj-gallery-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-top: 14px;
-  }
-  .proj-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(31, 29, 36, 0.18);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
-  }
-  .proj-dot.active {
-    background: var(--accent-crimson);
-    transform: scale(1.1);
-  }
-  .proj-modal-header {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border-delicate);
-  }
-  .proj-modal-cat {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent-crimson);
-    margin-bottom: 6px;
-  }
-  .proj-modal-title {
-    font-family: var(--font-editorial);
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.25;
-    color: var(--text-ink);
-  }
-  .proj-modal-body h4 {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-ink);
-    margin: 22px 0 8px;
-  }
-  .proj-modal-body p {
-    font-size: 14.5px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 12px;
-  }
-  .proj-modal-body ul {
-    margin: 8px 0 16px 20px;
-    color: var(--text-muted);
-  }
-  .proj-modal-body li {
-    font-size: 14.5px;
-    line-height: 1.6;
-    margin-bottom: 6px;
-  }
-  .proj-modal-footer {
-    margin-top: 28px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border-delicate);
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="#home" class="brand" data-route="home">ANGEL</a>
-
+    <a href="#top" class="wordmark">Angel Mebuge</a>
     <nav class="main-nav" aria-label="Primary">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="#home" data-route="home">Home</a></li>
-        <li class="nav-item has-drop">
-          <a class="nav-link" href="#catalogue" data-route="catalogue" aria-haspopup="true">Portfolio <span class="caret"></span></a>
-          <ul class="dropdown">
-            <li class="drop-label">Projects</li>
-            <li><a href="#catalogue" data-route="catalogue" data-anchor="project-hopewell">HopeWell Health Analytics</a></li>
-            <li><a href="#catalogue" data-route="catalogue" data-anchor="project-superstore">Superstore Sales Analysis</a></li>
-            <li><a href="#catalogue" data-route="catalogue" data-anchor="project-supplier">Supplier Quality Dashboard</a></li>
-            <li><a href="#catalogue" data-route="catalogue" data-anchor="project-jaundice">Digital Health Innovation</a></li>
-          </ul>
-        </li>
-        <li class="nav-item has-drop">
-          <a class="nav-link" href="#atelier" data-route="atelier" aria-haspopup="true">About <span class="caret"></span></a>
-          <ul class="dropdown">
-            <li class="drop-label">About Me</li>
-            <li><a href="#atelier" data-route="atelier" data-anchor="at-philosophy">My Approach</a></li>
-            <li><a href="#atelier" data-route="atelier" data-anchor="at-education">Education</a></li>
-            <li><a href="#atelier" data-route="atelier" data-anchor="at-provenance">Areas of Interest</a></li>
-            <li><a href="#atelier" data-route="atelier" data-anchor="at-woodcraft">Skills</a></li>
-            <li><a href="#atelier" data-route="atelier" data-anchor="at-press">Certifications</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#inquire" data-route="inquire">Contact</a></li>
-      </ul>
-      <a href="#inquire" class="nav-cta" data-route="inquire">Get in Touch</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact" class="nav-action">Get in touch</a>
     </nav>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">Menu</button>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile" hidden>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<!-- ============ MOBILE NAV ============ -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-  <ul>
-    <li><a class="m-link" href="#home" data-route="home">Home</a></li>
-    <li>
-      <div class="m-drop-head">
-        <a class="m-link" href="#catalogue" data-route="catalogue">Portfolio</a>
-        <button class="m-sub-toggle" aria-expanded="false" aria-label="Toggle portfolio submenu"><span class="caret"></span></button>
-      </div>
-      <ul class="m-sub">
-        <li><a href="#catalogue" data-route="catalogue" data-anchor="project-hopewell">HopeWell Health Analytics</a></li>
-        <li><a href="#catalogue" data-route="catalogue" data-anchor="project-superstore">Superstore Sales Analysis</a></li>
-        <li><a href="#catalogue" data-route="catalogue" data-anchor="project-supplier">Supplier Quality Dashboard</a></li>
-        <li><a href="#catalogue" data-route="catalogue" data-anchor="project-jaundice">Digital Health Innovation</a></li>
-      </ul>
-    </li>
-    <li>
-      <div class="m-drop-head">
-        <a class="m-link" href="#atelier" data-route="atelier">About</a>
-        <button class="m-sub-toggle" aria-expanded="false" aria-label="Toggle about submenu"><span class="caret"></span></button>
-      </div>
-      <ul class="m-sub">
-        <li><a href="#atelier" data-route="atelier" data-anchor="at-philosophy">My Approach</a></li>
-        <li><a href="#atelier" data-route="atelier" data-anchor="at-education">Education</a></li>
-        <li><a href="#atelier" data-route="atelier" data-anchor="at-provenance">Areas of Interest</a></li>
-        <li><a href="#atelier" data-route="atelier" data-anchor="at-woodcraft">Skills</a></li>
-        <li><a href="#atelier" data-route="atelier" data-anchor="at-press">Certifications</a></li>
-      </ul>
-    </li>
-    <li><a class="m-link" href="#inquire" data-route="inquire">Contact</a></li>
-  </ul>
-</nav>
+<main id="main">
 
-<main>
-
-<!-- ============ PAGE: HOME ============ -->
-<section class="page" id="page-home">
-
-  <div class="hero">
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
     <div class="container hero-grid">
-      <div class="reveal">
-        <span class="eyebrow">Anatomy &amp; Public Health · Nigeria</span>
-        <h1 class="editorial-title hero-title" style="margin-top:22px; font-weight: 700;">Data, health,<br>and the <em>people</em> between.</h1>
-        <p class="lede hero-copy">I&rsquo;m Angel Mebuge &mdash; I work at the intersection of data, healthcare, and digital innovation, with a particular interest in child health. With a background in Anatomy and Public Health, I use data, research, and technology to understand healthcare challenges and explore practical solutions that can improve health outcomes and access to care.</p>
-        <div class="hero-actions">
-          <a href="#catalogue" class="btn btn-solid" data-route="catalogue">View My Work</a>
-          <a href="#atelier" class="btn" data-route="atelier">About Me</a>
+      <div class="hero-text">
+        <h1 id="hero-title" class="hero-name">
+          <span class="line"><span>Angel</span></span>
+          <span class="line"><span>Mebuge</span></span>
+        </h1>
+        <p class="hero-lede rise">Public health and data analyst in Nigeria. I turn health programme data into decisions and design digital tools for child and newborn care.</p>
+        <div class="hero-actions rise">
+          <a href="#work" class="btn btn-primary">See my work</a>
+          <a href="mailto:angelmebuge13@gmail.com" class="btn btn-quiet">angelmebuge13@gmail.com</a>
         </div>
+        <dl class="hero-facts rise">
+          <div><dt>Focus</dt><dd>Child health, health equity, responsible AI</dd></div>
+          <div><dt>Tools</dt><dd>Excel, Power BI, Figma</dd></div>
+          <div><dt>Open to</dt><dd>Internships, fellowships, research roles</dd></div>
+        </dl>
       </div>
-      <div class="hero-visual reveal">
-        <span class="hero-meta">Focus &middot; Child Health / Data Analytics / Digital Health</span>
-        <div class="frame hero-img-main">
-          <img src="images/me1.jpeg" alt="Angel Mebuge — Digital Health and Data Analytics professional" loading="eager" fetchpriority="high" style="object-position: center top;">
+      <figure class="hero-portrait">
+        <div class="portrait-frame">
+          <img src="images/web/me1.jpg" width="1066" height="1600" alt="Portrait of Angel Mebuge smiling, seated in a navy dress" fetchpriority="high">
         </div>
-      </div>
+        <figcaption>Country Ambassador for Nigeria, Africa Responsible Digital Health Week 2026</figcaption>
+      </figure>
     </div>
-  </div>
+  </section>
 
-  <!-- Stats strip -->
-  <div class="stats-strip">
-    <div class="stat-item">
-      <span class="stat-num">6</span>
-      <span class="stat-label">Certifications &amp;<br>Programmes</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">4</span>
-      <span class="stat-label">Focus Areas in<br>Digital Health</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">Nigeria</span>
-      <span class="stat-label">Country Ambassador<br>Responsible Digital Health</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">∞</span>
-      <span class="stat-label">Questions about<br>Child Health</span>
-    </div>
-  </div>
-
-  <!-- Philosophy quote -->
-  <div class="band band-quote band-violet">
-    <div class="container reveal">
-      <span class="quote-mark">&ldquo;</span>
-      <p class="editorial-title big-quote">Data should illuminate not just what is happening in health, but <span class="editorial-italic" style="color:var(--accent-violet);">who it is happening to.</span></p>
-      <p class="quote-attr">Angel Mebuge &middot; Digital Health &amp; Data Analytics</p>
-    </div>
-  </div>
-
-  <!-- Featured Projects -->
-  <div class="band band-featured">
+  <!-- ============ CREDENTIAL BAND ============ -->
+  <section class="band" aria-labelledby="band-title">
     <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Featured Projects</span>
-          <h2 class="editorial-title section-title">Selected Case Studies &amp; Projects</h2>
-        </div>
-        <a href="#catalogue" class="text-link" data-route="catalogue">Full portfolio &rarr;</a>
-      </div>
-      <div class="product-grid" style="grid-template-columns: repeat(2, 1fr);">
-        <article class="product-card reveal">
-          <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-hopewell">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy"></div>
-            <div class="product-info">
-              <div>
-                <h3 class="product-name">HopeWell Health Initiative</h3>
-                <p class="product-cat">Data Analysis &amp; Recommendations</p>
-                <div class="card-tags"><span class="tag">Excel</span><span class="tag">Community Health</span></div>
-              </div>
-              <span class="product-price">Explore &rarr;</span>
-            </div>
-          </a>
-        </article>
-        <article class="product-card reveal">
-          <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-superstore">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy"></div>
-            <div class="product-info">
-              <div>
-                <h3 class="product-name">Superstore Sales Analysis</h3>
-                <p class="product-cat">Sales Analytics &amp; Business Insights</p>
-                <div class="card-tags"><span class="tag">Excel</span><span class="tag">Sales Analytics</span></div>
-              </div>
-              <span class="product-price">Explore &rarr;</span>
-            </div>
-          </a>
-        </article>
-        <article class="product-card reveal">
-          <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-supplier">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="project3/Screenshot%202026-10-10%20201719.png" alt="Supplier Quality Analysis Dashboard" loading="lazy"></div>
-            <div class="product-info">
-              <div>
-                <h3 class="product-name">Supplier Quality Dashboard</h3>
-                <p class="product-cat">Power BI &amp; Operations</p>
-                <div class="card-tags"><span class="tag">Power BI</span><span class="tag">Dashboard</span></div>
-              </div>
-              <span class="product-price">Explore &rarr;</span>
-            </div>
-          </a>
-        </article>
-        <article class="product-card reveal">
-          <a href="#catalogue" class="card-link" data-route="catalogue" data-anchor="project-jaundice">
-            <div class="frame project-frame" style="aspect-ratio: 16/10;"><img src="images/pro4.jpeg" alt="Digital Health Innovation Project" loading="lazy"></div>
-            <div class="product-info">
-              <div>
-                <h3 class="product-name">Digital Health Innovation</h3>
-                <p class="product-cat">Neonatal Jaundice Care Concept</p>
-                <div class="card-tags"><span class="tag">Digital Health</span><span class="tag">Responsible AI</span></div>
-              </div>
-              <span class="product-price">Explore &rarr;</span>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <!-- Capabilities strip -->
-  <div class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Skills &amp; Capabilities</span>
-          <h2 class="editorial-title section-title">What I bring to every problem</h2>
-        </div>
-      </div>
-      <div class="materials-grid reveal">
-        <div class="material-cell">
-          <span class="material-num">i.</span>
-          <h3>Data Analytics</h3>
-          <p>Excel &middot; Power BI &middot; Data Analysis &middot; Data Visualization &middot; Data Cleaning &mdash; applied to health datasets to surface meaningful insights.</p>
-        </div>
-        <div class="material-cell">
-          <span class="material-num">ii.</span>
-          <h3>Child Health &amp; Health Equity</h3>
-          <p>Researching access to care and health equity for children, with a focus on understanding how technology can be applied thoughtfully to real healthcare challenges.</p>
-        </div>
-        <div class="material-cell">
-          <span class="material-num">iii.</span>
-          <h3>Digital Health &amp; Research</h3>
-          <p>Digital Health &middot; Health Research &middot; Health Innovation &middot; Responsible AI &mdash; exploring practical solutions that respond to the realities of the people they are designed to serve.</p>
-        </div>
-        <div class="material-cell">
-          <span class="material-num">iv.</span>
-          <h3>Professional &amp; Leadership</h3>
-          <p>Team Leadership &middot; Project Coordination &middot; Communication &middot; Problem Solving &mdash; bringing people and evidence together to move things forward.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Split feature / about teaser -->
-  <div class="section" style="padding-top:20px;">
-    <div class="container split">
-      <div class="frame reveal">
-        <img src="images/me2.jpeg" alt="Angel Mebuge — Digital Health and Data Analytics professional" loading="lazy" style="object-position: center top;">
-      </div>
-      <div class="split-content reveal">
-        <span class="eyebrow">A little about me</span>
-        <h2 class="editorial-title">Anatomy, public health, and a question that keeps coming back</h2>
-        <p class="lede">I have a background in Anatomy and Public Health, with interests spanning data analytics, digital health research, and healthcare innovation. My interest in child health has shaped much of the work I pursue, particularly questions around access to care, health equity, and how technology can be applied thoughtfully to real healthcare challenges.</p>
-        <p class="lede" style="margin-top:16px;">I&rsquo;m particularly interested in the responsible use of technology in healthcare &mdash; where digital tools complement human expertise and respond to the realities of the people and communities they are designed to serve.</p>
-        <a href="#atelier" class="text-link" style="margin-top:34px;" data-route="atelier">Read more about me &rarr;</a>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ============ PAGE: PORTFOLIO ============ -->
-<section class="page" id="page-catalogue">
-
-  <div class="page-hero">
-    <div class="container reveal">
-      <span class="eyebrow">Portfolio</span>
-      <h1 class="editorial-title page-hero-title">Work shaped by <span class="editorial-italic" style="color:var(--accent-violet);">one question</span></h1>
-      <p class="lede" style="margin-top:24px;">Every project, programme, and piece of research below connects back to the same concern: how do we use data and technology to make health systems work better for the people who need them most?</p>
-    </div>
-  </div>
-
-  <!-- Project 1: HopeWell Health Initiative -->
-  <div class="catalogue-section" id="project-hopewell">
-    <div class="container">
-      <div class="cat-head reveal">
-        <div>
-          <span class="eyebrow">Project 01 &middot; Data Analytics</span>
-          <h2 class="editorial-title" style="margin-top:8px;">HopeWell Health Initiative &mdash; Data Analysis &amp; Recommendations</h2>
-          <p class="product-cat" style="margin-top:6px;">Data Analytics &middot; Community Health &middot; Team Leadership</p>
-        </div>
-      </div>
-      <div class="split reveal" style="align-items:start;">
-        <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('hopewell')">
-          <img src="project1/Screenshot%202026-10-10%20at%2019.14.06.png" alt="HopeWell Health Initiative — Data Analysis & Recommendations" loading="lazy">
-        </div>
-        <div class="split-content">
-          <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Excel</span><span class="tag">Data Analysis</span><span class="tag">Data Visualization</span><span class="tag">Team Leadership</span></div>
-          <p class="lede" style="font-size:16px; margin-bottom:16px;">A team-based community health data analytics project analysing programme data to identify insights and develop recommendations for programme planning and decision-making.</p>
-          <div style="font-size:14px; color:var(--text-muted); margin-bottom:20px;">
-            <p><strong>Tools:</strong> Microsoft Excel &middot; PowerPoint</p>
-            <p style="margin-top:4px;"><strong>My Role:</strong> Team Lead &amp; Data Analyst</p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-solid" onclick="openProjectModal('hopewell')" style="padding:10px 22px; font-size:12px;">View Details</button>
-            <a href="https://docs.google.com/spreadsheets/d/1dbwV8XDvp3eEd5A-BOdSX-7mPAGMYO-3/edit?usp=sharing&ouid=110267573420317805113&rtpof=true&sd=true" target="_blank" rel="noopener" class="btn" style="padding:10px 22px; font-size:12px;">View Project &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 2: Superstore Sales Data Analysis -->
-  <div class="band band-slice" id="project-superstore">
-    <div class="container">
-      <div class="cat-head reveal">
-        <div>
-          <span class="eyebrow">Project 02 &middot; Sales Analytics</span>
-          <h2 class="editorial-title" style="margin-top:8px;">Superstore Sales Data Analysis</h2>
-          <p class="product-cat" style="margin-top:6px;">Excel &middot; Sales Analytics &middot; Data Analysis</p>
-        </div>
-      </div>
-      <div class="split reveal" style="align-items:start;">
-        <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('superstore')">
-          <img src="project2/Screenshot%202026-10-10%20at%2019.16.29.png" alt="Superstore Sales Data Analysis" loading="lazy">
-        </div>
-        <div class="split-content">
-          <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Excel</span><span class="tag">Sales Analytics</span><span class="tag">Data Analysis</span></div>
-          <p class="lede" style="font-size:16px; margin-bottom:16px;">A sales data analysis project focused on understanding sales performance, identifying patterns and trends, and generating business insights and recommendations.</p>
-          <div style="font-size:14px; color:var(--text-muted); margin-bottom:20px;">
-            <p><strong>Tools:</strong> Microsoft Excel</p>
-            <p style="margin-top:4px;"><strong>My Role:</strong> Sole Data Analyst</p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-solid" onclick="openProjectModal('superstore')" style="padding:10px 22px; font-size:12px;">View Details</button>
-            <a href="https://docs.google.com/spreadsheets/d/1YjK-Ut2Ag7bNeoLdw8czRqn5UqW7lBOJ/edit?usp=sharing&ouid=110267573420317805113&rtpof=true&sd=true" target="_blank" rel="noopener" class="btn" style="padding:10px 22px; font-size:12px;">View Project &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 3: Supplier Quality Analysis Dashboard -->
-  <div class="catalogue-section" id="project-supplier">
-    <div class="container">
-      <div class="cat-head reveal">
-        <div>
-          <span class="eyebrow">Project 03 &middot; Power BI</span>
-          <h2 class="editorial-title" style="margin-top:8px;">Supplier Quality Analysis Dashboard</h2>
-          <p class="product-cat" style="margin-top:6px;">Power BI &middot; Data Analysis &middot; Data Visualization</p>
-        </div>
-      </div>
-      <div class="split reveal" style="align-items:start;">
-        <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('supplier')">
-          <img src="project3/Screenshot%202026-10-10%20201719.png" alt="Supplier Quality Analysis Dashboard" loading="lazy">
-        </div>
-        <div class="split-content">
-          <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Power BI</span><span class="tag">Data Analysis</span><span class="tag">Data Visualization</span></div>
-          <p class="lede" style="font-size:16px; margin-bottom:16px;">An individual Power BI project analysing supplier, material, defect, and downtime data to visualize supplier quality performance across manufacturing plants.</p>
-          <div style="font-size:14px; color:var(--text-muted); margin-bottom:20px;">
-            <p><strong>Tools:</strong> Microsoft Power BI</p>
-            <p style="margin-top:4px;"><strong>My Role:</strong> Sole Data Analyst &amp; Dashboard Developer</p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-solid" onclick="openProjectModal('supplier')" style="padding:10px 22px; font-size:12px;">View Details</button>
-            <a href="https://drive.google.com/file/d/1FTqg-Q5NBRKprDIwdNkKblKZiSJ-f_fO/view?usp=sharing" target="_blank" rel="noopener" class="btn" style="padding:10px 22px; font-size:12px;">View Project &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project 4: Digital Health Innovation Project -->
-  <div class="band band-slice band-crimson" id="project-jaundice">
-    <div class="container">
-      <div class="cat-head reveal">
-        <div>
-          <span class="eyebrow">Project 04 &middot; Digital Health Concept</span>
-          <h2 class="editorial-title" style="margin-top:8px;">Digital Health Innovation Project</h2>
-          <p class="product-cat" style="margin-top:6px;">Child Health &middot; Digital Health &middot; Neonatal Care</p>
-        </div>
-      </div>
-      <div class="split reveal" style="align-items:start;">
-        <div class="frame" style="aspect-ratio:4/3; cursor:pointer;" onclick="openProjectModal('jaundice')">
-          <img src="images/pro4.jpeg" alt="Digital Health Innovation Project" loading="lazy">
-        </div>
-        <div class="split-content">
-          <div class="card-tags" style="margin-bottom:14px;"><span class="tag">Digital Health</span><span class="tag">Child Health</span><span class="tag">Health Innovation</span><span class="tag">Responsible AI</span></div>
-          <p class="lede" style="font-size:16px; margin-bottom:16px;">A digital health concept exploring how a phone-based tool could support the early recognition of potential neonatal jaundice and encourage timely care-seeking, particularly for newborns with darker skin.</p>
-          <div style="font-size:14px; color:var(--text-muted); margin-bottom:20px;">
-            <p><strong>Stage:</strong> Concept / Pre-product</p>
-            <p style="margin-top:4px;"><strong>My Role:</strong> Digital Health Project Lead / Creator</p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-solid" onclick="openProjectModal('jaundice')" style="padding:10px 22px; font-size:12px;">View Details</button>
-            <a href="https://www.figma.com/proto/qrVv6ZsVkn3HINncL3Vu6h?node-id=127:3" target="_blank" rel="noopener" class="btn" style="padding:10px 22px; font-size:12px;">View Prototype &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ============ PAGE: ABOUT ============ -->
-<section class="page" id="page-atelier">
-
-  <div class="page-hero">
-    <div class="container reveal">
-      <span class="eyebrow">About Me</span>
-      <h1 class="editorial-title page-hero-title">Where curiosity meets <span class="editorial-italic" style="color:var(--accent-violet);">commitment</span></h1>
-      <p class="lede" style="margin-top:24px;">I have a background in Anatomy and Public Health, with interests spanning data analytics, digital health research, and healthcare innovation. My interest in child health has shaped much of the work I pursue &mdash; particularly questions around access to care, health equity, and how technology can be applied thoughtfully to real healthcare challenges.</p>
-    </div>
-  </div>
-
-  <!-- My Approach -->
-  <div class="atelier-block" id="at-philosophy">
-    <div class="container split">
-      <div class="split-content reveal">
-        <span class="eyebrow">My Approach</span>
-        <h2 class="editorial-title">People before platforms, always</h2>
-        <p class="lede">I&rsquo;m interested in using data and research to understand health problems, communicate insights, and explore practical digital solutions. My work includes health data analysis, data visualization, and digital health projects focused on child health and improving access to appropriate care.</p>
-        <p class="lede" style="margin-top:16px;">I&rsquo;m particularly interested in the responsible use of technology in healthcare &mdash; where digital tools complement human expertise and respond to the realities of the people and communities they are designed to serve.</p>
-      </div>
-      <div class="frame reveal"><img src="images/me3.jpeg" alt="Angel Mebuge — Digital Health and Data Analytics professional" loading="lazy" style="object-position: center top;"></div>
-    </div>
-  </div>
-
-  <!-- Education -->
-  <div class="atelier-block" id="at-education">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Academic Background</span>
-          <h2 class="editorial-title section-title">Education</h2>
-        </div>
-      </div>
-      <div class="cert-grid reveal">
-        <div class="cert-card" style="border-left: 3px solid var(--accent-crimson);">
-          <span class="cert-year-badge">Ongoing</span>
-          <h3>MSc Public Health</h3>
-          <p>National Open University of Nigeria</p>
-          <p class="cert-issuer">Master of Science &middot; Public Health</p>
-        </div>
-        <div class="cert-card" style="border-left: 3px solid var(--accent-violet);">
-          <span class="cert-year-badge">CGPA: 4.35 / 5.00</span>
-          <h3>B.Sc. Anatomy &mdash; Second Class Upper</h3>
-          <p>Babcock University</p>
-          <p class="cert-issuer">Bachelor of Science &middot; Anatomy</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Areas of Interest on diagonal slate -->
-  <div class="band band-slice" id="at-provenance">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Areas of Interest</span>
-          <h2 class="editorial-title section-title">The threads that run through everything</h2>
-        </div>
-      </div>
-      <ul class="provenance-list reveal">
-        <li><strong>Child Health</strong><span>Understanding access to care, health equity, and outcomes for children &mdash; with a focus on how research and data can surface the gaps that affect those most in need.</span></li>
-        <li><strong>Digital Health</strong><span>Exploring how digital tools can be applied thoughtfully to real healthcare challenges, strengthening access and delivery without losing sight of the communities they are designed to serve.</span></li>
-        <li><strong>Data Analytics</strong><span>Using data to understand health problems and communicate insights &mdash; through analysis, visualisation, and the kind of clarity that helps people make better decisions.</span></li>
-        <li><strong>Health Research</strong><span>Evidence-based approaches to understanding healthcare challenges, reviewing literature, and translating findings into insights that are practical and meaningful.</span></li>
-        <li><strong>Responsible AI</strong><span>Asking the critical questions about algorithmic tools in health settings: whose data, whose context, and whose interests? Technology should serve people, not the other way around.</span></li>
-        <li><strong>Health Equity</strong><span>Interrogating why some populations consistently receive worse care &mdash; and what data, policy, and digital innovation can do to close those gaps.</span></li>
+      <h2 id="band-title" class="visually-hidden">At a glance</h2>
+      <ul class="band-list">
+        <li class="reveal"><strong>MSc Public Health</strong><span>National Open University of Nigeria, in progress</span></li>
+        <li class="reveal"><strong>B.Sc. Anatomy</strong><span>Babcock University, Second Class Upper, 4.35 CGPA</span></li>
+        <li class="reveal"><strong>Technovate Fellow</strong><span>Health Tech Fellowship, 2026</span></li>
+        <li class="reveal"><strong>Data for Impact</strong><span>Bootcamp, Cohort 4, 2026</span></li>
       </ul>
     </div>
-  </div>
+  </section>
 
-  <!-- Skills -->
-  <div class="atelier-block" id="at-woodcraft">
-    <div class="container split">
-      <div class="frame reveal"><img src="images/me4.jpeg" alt="Angel Mebuge — Digital Health and Data Analytics professional" loading="lazy" style="object-position: center top;"></div>
-      <div class="split-content reveal">
-        <span class="eyebrow">Skills</span>
-        <h2 class="editorial-title">The tools I bring to every problem</h2>
-        <p class="lede"><strong>Data Analytics:</strong> Excel &middot; Power BI &middot; Data Analysis &middot; Data Visualization &middot; Data Cleaning</p>
-        <p class="lede" style="margin-top:16px;"><strong>Digital Health &amp; Research:</strong> Digital Health &middot; Health Research &middot; Health Innovation &middot; Responsible AI</p>
-        <p class="lede" style="margin-top:16px;"><strong>Professional &amp; Leadership:</strong> Team Leadership &middot; Project Coordination &middot; Communication &middot; Problem Solving</p>
-        <a href="#inquire" class="text-link" style="margin-top:34px;" data-route="inquire">Let&rsquo;s work together &rarr;</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Certifications -->
-  <div class="atelier-block" id="at-press">
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work" aria-labelledby="work-title">
     <div class="container">
-      <div class="section-head reveal">
+      <header class="section-intro reveal">
+        <h2 id="work-title" class="section-title">Selected work</h2>
+        <p>Four projects, from raw spreadsheets to a newborn-care prototype. Each one asks who the data is about and what should change because of it.</p>
+      </header>
+
+      <!-- Featured: neonatal jaundice -->
+      <article class="case case-feature" id="project-jaundice" aria-labelledby="t-jaundice">
+        <button class="case-media reveal" type="button" data-project="jaundice" aria-label="Open the neonatal jaundice case study">
+          <img src="images/web/jaundice.jpg" width="1600" height="1066" alt="Prototype home screen of the jaundice screening app beside a sleeping newborn" loading="lazy">
+        </button>
+        <div class="case-body">
+          <div class="case-head reveal">
+            <h3 id="t-jaundice" class="case-title">Newborn jaundice on darker skin</h3>
+            <p class="case-kind">Digital health concept · Child health</p>
+          </div>
+          <p class="case-summary reveal">Jaundice is harder to see on darker skin, so it is often caught late. This phone-based concept guides caregivers and health workers through photographing a newborn against a white reference, gives a risk level, and points them to care in time. It supports care-seeking. It does not diagnose.</p>
+          <dl class="case-facts reveal">
+            <div><dt>Role</dt><dd>Project lead and creator</dd></div>
+            <div><dt>Stage</dt><dd>Concept, clickable Figma prototype</dd></div>
+            <div><dt>For</dt><dd>Parents, nurses, midwives, community health workers</dd></div>
+            <div><dt>Where</dt><dd>Nigeria first, then other African settings</dd></div>
+          </dl>
+          <div class="case-actions reveal">
+            <button class="btn btn-primary" type="button" data-project="jaundice">Read the case study</button>
+            <a class="text-link" href="https://www.figma.com/proto/qrVv6ZsVkn3HINncL3Vu6h?node-id=127:3" target="_blank" rel="noopener">Open the prototype</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- HopeWell -->
+      <article class="case case-split" id="project-hopewell" aria-labelledby="t-hopewell">
+        <div class="case-body">
+          <div class="case-head reveal">
+            <h3 id="t-hopewell" class="case-title">HopeWell outreach review</h3>
+            <p class="case-kind">Programme analytics · Community health</p>
+          </div>
+          <p class="case-summary reveal">A Nigerian NGO ran immunisation clinics, malaria spraying, antenatal sessions and screening drives across Lagos, Kaduna, Kano, Enugu and Rivers. I led a team that cleaned the session records, logged every data fix, and compared reach, completion and cost per completed case to recommend where the next budget should go.</p>
+          <dl class="case-facts reveal">
+            <div><dt>Role</dt><dd>Team lead and data analyst</dd></div>
+            <div><dt>Tools</dt><dd>Excel, PowerPoint</dd></div>
+            <div><dt>Delivered</dt><dd>Clean dataset, charts, recommendations, presentation</dd></div>
+          </dl>
+          <div class="case-actions reveal">
+            <button class="btn btn-primary" type="button" data-project="hopewell">Read the case study</button>
+            <a class="text-link" href="https://docs.google.com/spreadsheets/d/1dbwV8XDvp3eEd5A-BOdSX-7mPAGMYO-3/edit?usp=sharing&amp;ouid=110267573420317805113&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Open the workbook</a>
+          </div>
+        </div>
+        <div class="case-stack">
+          <button class="case-media reveal" type="button" data-project="hopewell" data-slide="0" aria-label="Open the HopeWell charts">
+            <img src="images/web/hopewell-5.jpg" width="2000" height="988" alt="Charts comparing outreach programmes by volume, cost-effectiveness and completion rate" loading="lazy">
+          </button>
+          <button class="case-media case-media-small reveal" type="button" data-project="hopewell" data-slide="2" aria-label="Open the HopeWell data cleaning log">
+            <img src="images/web/hopewell-2.jpg" width="2000" height="885" alt="Data cleaning log listing each issue, its location, the action taken and the reason" loading="lazy">
+          </button>
+        </div>
+      </article>
+
+      <!-- Pair: Power BI + Superstore -->
+      <div class="case-pair">
+        <article class="case case-half" id="project-supplier" aria-labelledby="t-supplier">
+          <button class="case-media reveal" type="button" data-project="supplier" aria-label="Open the supplier quality case study">
+            <img src="images/web/supplier-1.jpg" width="1063" height="592" alt="Power BI dashboard of supplier defects and downtime by vendor and plant" loading="lazy">
+          </button>
+          <div class="case-head reveal">
+            <h3 id="t-supplier" class="case-title">Supplier quality dashboard</h3>
+            <p class="case-kind">Power BI · Operations</p>
+          </div>
+          <p class="case-summary reveal">An interactive report for a manufacturer showing which vendors and materials cause the most defects and how much downtime they cost each plant.</p>
+          <p class="case-meta reveal">Sole analyst and dashboard developer</p>
+          <div class="case-actions reveal">
+            <button class="btn btn-primary" type="button" data-project="supplier">Read the case study</button>
+            <a class="text-link" href="https://drive.google.com/file/d/1FTqg-Q5NBRKprDIwdNkKblKZiSJ-f_fO/view?usp=sharing" target="_blank" rel="noopener">Open the report</a>
+          </div>
+        </article>
+
+        <article class="case case-half" id="project-superstore" aria-labelledby="t-superstore">
+          <button class="case-media reveal" type="button" data-project="superstore" aria-label="Open the superstore sales case study">
+            <img src="images/web/superstore-2.jpg" width="2000" height="1065" alt="Excel sales dashboard with sales by category, region and state beside a written insight summary" loading="lazy">
+          </button>
+          <div class="case-head reveal">
+            <h3 id="t-superstore" class="case-title">Superstore sales analysis</h3>
+            <p class="case-kind">Excel · Sales analytics</p>
+          </div>
+          <p class="case-summary reveal">Where a retailer's profit comes from and where it leaks, by category, region and state. Technology and the West carry the business; machines, tables and bookcases earn almost nothing.</p>
+          <p class="case-meta reveal">Sole data analyst</p>
+          <div class="case-actions reveal">
+            <button class="btn btn-primary" type="button" data-project="superstore">Read the case study</button>
+            <a class="text-link" href="https://docs.google.com/spreadsheets/d/1YjK-Ut2Ag7bNeoLdw8czRqn5UqW7lBOJ/edit?usp=sharing&amp;ouid=110267573420317805113&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Open the workbook</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <figure class="about-portrait reveal">
+        <img src="images/web/me3.jpg" width="1066" height="1600" alt="Angel Mebuge standing with arms crossed" loading="lazy">
+      </figure>
+      <div class="about-text">
+        <h2 id="about-title" class="section-title reveal">About me</h2>
+        <p class="about-lead reveal">Anatomy first, then public health, and always one question: are health systems reaching children?</p>
+        <p class="reveal">My work sits where data, research and digital tools meet. I analyse health programme data, make it readable for the people who decide budgets, and design tools that fit the realities of the families and health workers who will use them.</p>
+        <p class="reveal">I care about responsible technology in healthcare: tools that support clinical judgement rather than replace it, built with the context, the data and the people they are meant to serve.</p>
+        <blockquote class="about-quote reveal">
+          <p>Data should show not only what is happening in health, but who it is happening to.</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="container skills" aria-labelledby="skills-title">
+      <h3 id="skills-title" class="sub-title reveal">What I bring</h3>
+      <div class="skills-grid reveal">
         <div>
-          <span class="eyebrow">Certifications &amp; Programmes</span>
-          <h2 class="editorial-title section-title">Certifications &amp; programmes</h2>
+          <h4>Data analytics</h4>
+          <p>Excel, Power BI, data cleaning, analysis and visualisation applied to health and programme data.</p>
         </div>
-      </div>
-      <div class="cert-grid reveal">
-        <div class="cert-card cert-card--has-img" onclick="openCert('images/Technovatecert.jpeg', 'Technovate Health Tech Fellowship')" role="button" tabindex="0" aria-label="View Technovate Health Tech Fellowship certificate">
-          <div class="cert-img-wrap">
-            <img src="images/Technovatecert.jpeg" alt="Technovate Health Tech Fellowship Certificate" loading="lazy">
-            <span class="cert-view-label">View Certificate</span>
-          </div>
-          <span class="cert-year-badge">2026</span>
-          <h3>Technovate Health Tech Fellowship</h3>
-          <p>Reinventing Healthcare in Africa Initiative &mdash; a fellowship programme exploring health technology innovation across the African continent.</p>
-          <p class="cert-issuer">Technovate · Certificate of Completion</p>
+        <div>
+          <h4>Digital health and research</h4>
+          <p>Health research, product concepts for child health, responsible AI and literature review.</p>
         </div>
-        <div class="cert-card cert-card--has-img" onclick="openCert('images/YFRDHcert.jpeg', 'Country Ambassador of Nigeria')" role="button" tabindex="0" aria-label="View Country Ambassador certificate">
-          <div class="cert-img-wrap">
-            <img src="images/YFRDHcert.jpeg" alt="Country Ambassador of Nigeria — Africa Responsible Digital Health Week Certificate" loading="lazy">
-            <span class="cert-view-label">View Certificate</span>
-          </div>
-          <span class="cert-year-badge">2026</span>
-          <h3>Country Ambassador of Nigeria</h3>
-          <p>Africa Responsible Digital Health Week 2026 &mdash; recognised for leadership and advocacy in responsible digital health across Nigeria.</p>
-          <p class="cert-issuer">Youth for Responsible Digital Future · Certificate of Recognition</p>
-        </div>
-        <div class="cert-card">
-          <span class="cert-year-badge">2026</span>
-          <h3>HealthTech Career Accelerator &mdash; Cohort 3</h3>
-          <p>Digital Health &amp; Health Innovation programme focused on early-career development in health technology.</p>
-          <p class="cert-issuer">HealthTech Accelerator · Programme</p>
-        </div>
-        <div class="cert-card cert-card--has-img" onclick="openCert('images/HPAIFPLcert.jpeg', 'AI in Society: Ethics, Leadership, and the Road Ahead')" role="button" tabindex="0" aria-label="View AI in Society certificate">
-          <div class="cert-img-wrap">
-            <img src="images/HPAIFPLcert.jpeg" alt="AI in Society: Ethics, Leadership, and the Road Ahead — HP Certificate" loading="lazy">
-            <span class="cert-view-label">View Certificate</span>
-          </div>
-          <span class="cert-year-badge">2026</span>
-          <h3>AI in Society: Ethics, Leadership, and the Road Ahead</h3>
-          <p>Covering the ethical dimensions of artificial intelligence, leadership in the digital age, and frameworks for responsible AI deployment in professional settings.</p>
-          <p class="cert-issuer">HP · Professional Certification</p>
-        </div>
-        <div class="cert-card cert-card--has-img" onclick="openCert('images/DFIcert.png', 'Data for Impact Bootcamp — Cohort 4')" role="button" tabindex="0" aria-label="View Data for Impact Bootcamp certificate">
-          <div class="cert-img-wrap">
-            <img src="images/DFIcert.png" alt="Data for Impact Bootcamp Cohort 4 Certificate" loading="lazy">
-            <span class="cert-view-label">View Certificate</span>
-          </div>
-          <span class="cert-year-badge">2026</span>
-          <h3>Data for Impact Bootcamp &mdash; Cohort 4</h3>
-          <p>Data Analytics &amp; Health Data programme applying analytical skills to real-world health datasets and public health challenges.</p>
-          <p class="cert-issuer">Data for Impact · Cohort 4</p>
-        </div>
-        <div class="cert-card cert-card--has-img" onclick="openCert('images/KlarityLabcert.jpeg', 'Excel Bootcamp')" role="button" tabindex="0" aria-label="View Excel Bootcamp certificate">
-          <div class="cert-img-wrap">
-            <img src="images/KlarityLabcert.jpeg" alt="Excel Bootcamp — The Klarity Lab Certificate" loading="lazy">
-            <span class="cert-view-label">View Certificate</span>
-          </div>
-          <span class="cert-year-badge">2026</span>
-          <h3>Excel Bootcamp</h3>
-          <p>Intensive training in Microsoft Excel for data analysis, covering advanced functions, data cleaning, and visualisation techniques applied to health data.</p>
-          <p class="cert-issuer">The Klarity Lab · Certificate of Completion</p>
+        <div>
+          <h4>Leadership</h4>
+          <p>Leading analysis teams, coordinating projects and presenting findings to decision-makers.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Certificate Lightbox -->
-  <div id="certLightbox" class="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer" onclick="closeCertIfBg(event)">
-    <div class="cert-lightbox-inner">
-      <button class="cert-lightbox-close" onclick="closeCert()" aria-label="Close certificate">&times;</button>
-      <p class="cert-lightbox-title" id="certLightboxTitle"></p>
-      <img id="certLightboxImg" src="" alt="Certificate" loading="lazy">
-    </div>
-  </div>
-
-</section>
-
-<!-- ============ PAGE: CONTACT ============ -->
-<section class="page" id="page-inquire">
-
-  <div class="page-hero">
-    <div class="container reveal">
-      <span class="eyebrow">Contact</span>
-      <h1 class="editorial-title page-hero-title">Start a <span class="editorial-italic" style="color:var(--accent-violet);">conversation</span></h1>
-      <p class="lede" style="margin-top:24px;">Whether you&rsquo;re working on a digital health project, looking for a research collaborator, hiring for an internship, or just want to talk about child health data &mdash; I&rsquo;d genuinely love to hear from you. I reply to every message personally.</p>
-    </div>
-  </div>
-
-  <div class="container inquire-grid">
-    <div class="inquire-details reveal">
-      <h3>Based in</h3>
-      <p>Nigeria<br>Open to global opportunities, remote collaboration, fellowships, and internships.</p>
-      <h3>Contact</h3>
-      <p><a href="mailto:angelmebuge13@gmail.com" style="color:inherit;">angelmebuge13@gmail.com</a></p>
-      <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/angel-mebuge" target="_blank" rel="noopener noreferrer" style="color:inherit;">linkedin.com/in/angel-mebuge</a></p>
-      <h3>Open to</h3>
-      <p>Internships, fellowships, research collaborations, data analytics projects, and early-career opportunities in digital health &mdash; particularly those focused on child health or African health systems.</p>
-      <h3>Availability</h3>
-      <p>Currently available for project work, research partnerships, and opportunities at the intersection of data, child health, and digital innovation.</p>
-    </div>
-
-    <form id="inquireForm" class="reveal" novalidate>
-      <div class="form-row">
-        <div class="field">
-          <label for="f-name">Full name</label>
-          <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Your full name">
-        </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="your@email.com">
-        </div>
+  <!-- ============ INTERESTS ============ -->
+  <section class="interests" aria-labelledby="interests-title">
+    <div class="container interests-grid">
+      <div class="interests-side">
+        <h2 id="interests-title" class="section-title reveal">What drives the work</h2>
+        <figure class="interests-photo reveal">
+          <img src="images/web/me4.jpg" width="1280" height="1600" alt="Angel Mebuge seated on a teal stool, hands clasped" loading="lazy">
+        </figure>
       </div>
-      <div class="form-row">
+      <dl class="lineup">
+        <div class="reveal"><dt>Child health</dt><dd>Access to care, outcomes and the gaps that hit the youngest patients hardest.</dd></div>
+        <div class="reveal"><dt>Health equity</dt><dd>Why some groups keep receiving worse care, and what data, policy and design can do about it.</dd></div>
+        <div class="reveal"><dt>Digital health</dt><dd>Tools that strengthen access and delivery without losing sight of the community using them.</dd></div>
+        <div class="reveal"><dt>Data analytics</dt><dd>Analysis and charts clear enough that a programme manager can act on them the same week.</dd></div>
+        <div class="reveal"><dt>Health research</dt><dd>Reading the evidence carefully and turning findings into something practical.</dd></div>
+        <div class="reveal"><dt>Responsible AI</dt><dd>Whose data, whose context, whose interests: the questions to ask before an algorithm reaches a clinic.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ CREDENTIALS ============ -->
+  <section class="credentials" id="credentials" aria-labelledby="cred-title">
+    <div class="container">
+      <header class="section-intro reveal">
+        <h2 id="cred-title" class="section-title">Education and credentials</h2>
+        <p>Degrees, fellowships and programmes. Select a certificate to view it.</p>
+      </header>
+
+      <h3 class="sub-title reveal">Education</h3>
+      <ul class="edu-list">
+        <li class="reveal">
+          <span class="edu-degree">MSc Public Health</span>
+          <span class="edu-school">National Open University of Nigeria</span>
+          <span class="edu-note">In progress</span>
+        </li>
+        <li class="reveal">
+          <span class="edu-degree">B.Sc. Anatomy</span>
+          <span class="edu-school">Babcock University</span>
+          <span class="edu-note">Second Class Upper, 4.35 / 5.00</span>
+        </li>
+      </ul>
+
+      <h3 class="sub-title reveal">Certificates and programmes, 2026</h3>
+      <ul class="cert-list">
+        <li class="reveal">
+          <button class="cert" type="button" data-cert="images/web/cert-YFRDH.jpg" data-title="Country Ambassador of Nigeria">
+            <span class="cert-thumb"><img src="images/web/cert-YFRDH.jpg" width="1800" height="1274" alt="" loading="lazy"></span>
+            <span class="cert-text">
+              <span class="cert-name">Country Ambassador of Nigeria</span>
+              <span class="cert-desc">Africa Responsible Digital Health Week, for leadership and advocacy in responsible digital health.</span>
+              <span class="cert-issuer">Youth for Responsible Digital Future</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="cert" type="button" data-cert="images/web/cert-Technovate.jpg" data-title="Technovate Health Tech Fellowship">
+            <span class="cert-thumb"><img src="images/web/cert-Technovate.jpg" width="1800" height="1272" alt="" loading="lazy"></span>
+            <span class="cert-text">
+              <span class="cert-name">Technovate Health Tech Fellowship</span>
+              <span class="cert-desc">Reinventing Healthcare in Africa, a fellowship on health technology across the continent.</span>
+              <span class="cert-issuer">Technovate</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="cert" type="button" data-cert="images/web/cert-DFI.jpg" data-title="Data for Impact Bootcamp, Cohort 4">
+            <span class="cert-thumb"><img src="images/web/cert-DFI.jpg" width="1800" height="1272" alt="" loading="lazy"></span>
+            <span class="cert-text">
+              <span class="cert-name">Data for Impact Bootcamp, Cohort 4</span>
+              <span class="cert-desc">Data analytics applied to real health datasets and public health problems.</span>
+              <span class="cert-issuer">Data for Impact</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="cert" type="button" data-cert="images/web/cert-HPAIFPL.jpg" data-title="AI in Society: Ethics, Leadership, and the Road Ahead">
+            <span class="cert-thumb"><img src="images/web/cert-HPAIFPL.jpg" width="1274" height="1800" alt="" loading="lazy"></span>
+            <span class="cert-text">
+              <span class="cert-name">AI in Society: Ethics, Leadership, and the Road Ahead</span>
+              <span class="cert-desc">The ethics of AI, leadership in the digital age and frameworks for responsible deployment.</span>
+              <span class="cert-issuer">HP</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <button class="cert" type="button" data-cert="images/web/cert-KlarityLab.jpg" data-title="Excel Bootcamp">
+            <span class="cert-thumb"><img src="images/web/cert-KlarityLab.jpg" width="1800" height="1272" alt="" loading="lazy"></span>
+            <span class="cert-text">
+              <span class="cert-name">Excel Bootcamp</span>
+              <span class="cert-desc">Advanced functions, data cleaning and visualisation in Microsoft Excel.</span>
+              <span class="cert-issuer">The Klarity Lab</span>
+            </span>
+          </button>
+        </li>
+        <li class="reveal">
+          <div class="cert cert-static">
+            <span class="cert-thumb cert-thumb-empty" aria-hidden="true">HealthTech<br>Accelerator</span>
+            <span class="cert-text">
+              <span class="cert-name">HealthTech Career Accelerator, Cohort 3</span>
+              <span class="cert-desc">Early-career programme in digital health and health innovation.</span>
+              <span class="cert-issuer">HealthTech Accelerator</span>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-grid">
+      <div class="contact-main">
+        <h2 id="contact-title" class="section-title reveal">Let's work together</h2>
+        <p class="contact-lede reveal">I'm open to internships, fellowships, research collaborations and data projects in child and digital health, in Nigeria or remotely. I reply to every message myself.</p>
+        <a class="contact-email reveal" href="mailto:angelmebuge13@gmail.com">angelmebuge13<wbr>@gmail.com</a>
+        <ul class="contact-links reveal">
+          <li><a href="https://www.linkedin.com/in/angel-mebuge" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li>Based in Nigeria</li>
+        </ul>
+      </div>
+
+      <form id="inquireForm" class="contact-form reveal" novalidate>
+        <h3 class="form-title">Or send a message on WhatsApp</h3>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email">
+          </div>
+        </div>
         <div class="field">
-          <label for="f-interest">Area of Interest</label>
+          <label for="f-interest">What it's about</label>
           <select id="f-interest" name="interest">
-            <option>Child Health Research</option>
-            <option>Data Analytics</option>
-            <option>Digital Health</option>
-            <option>Research Collaboration</option>
-            <option>Fellowship / Internship</option>
-            <option>General Enquiry</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-timeline">Type of Opportunity</label>
-          <select id="f-timeline" name="timeline">
-            <option>Internship / Fellowship</option>
-            <option>Research Collaboration</option>
-            <option>Project Work</option>
-            <option>Mentorship / Speaking</option>
+            <option>Internship or fellowship</option>
+            <option>Research collaboration</option>
+            <option>Data analytics project</option>
+            <option>Digital health project</option>
+            <option>Mentorship or speaking</option>
             <option>Just saying hello</option>
           </select>
         </div>
-      </div>
-      <div class="field">
-        <label for="f-message">Your message</label>
-        <textarea id="f-message" name="message" placeholder="Tell me about what you&rsquo;re working on, what you&rsquo;re looking for, or just introduce yourself. I&rsquo;m especially interested in anything touching on child health, African health systems, or responsible AI." required></textarea>
-      </div>
-      <button type="submit" class="btn btn-solid">Send Message</button>
-      <p class="form-note" id="formNote">Your message will open in WhatsApp, ready to send.</p>
-    </form>
-  </div>
-
-</section>
+        <div class="field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-light">Continue in WhatsApp</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#home" class="brand" data-route="home">ANGEL</a>
-        <p>Digital Health &amp; Data Analytics. Working at the intersection of data, child health, and digital innovation in Africa.</p>
+    <div class="footer-cols">
+      <div>
+        <p class="footer-head">Angel Mebuge</p>
+        <p>Public health and data analytics, Nigeria</p>
       </div>
-      <div class="footer-col">
-        <h4>Portfolio</h4>
+      <div>
+        <p class="footer-head">On this page</p>
         <ul>
-          <li><a href="#catalogue" data-route="catalogue" data-anchor="project-hopewell">HopeWell Health Analytics</a></li>
-          <li><a href="#catalogue" data-route="catalogue" data-anchor="project-superstore">Superstore Sales Analysis</a></li>
-          <li><a href="#catalogue" data-route="catalogue" data-anchor="project-supplier">Supplier Quality Dashboard</a></li>
-          <li><a href="#catalogue" data-route="catalogue" data-anchor="project-jaundice">Digital Health Innovation</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>About</h4>
+      <div>
+        <p class="footer-head">Elsewhere</p>
         <ul>
-          <li><a href="#atelier" data-route="atelier" data-anchor="at-philosophy">My Approach</a></li>
-          <li><a href="#atelier" data-route="atelier" data-anchor="at-education">Education</a></li>
-          <li><a href="#atelier" data-route="atelier" data-anchor="at-provenance">Areas of Interest</a></li>
-          <li><a href="#atelier" data-route="atelier" data-anchor="at-woodcraft">Skills</a></li>
-          <li><a href="#atelier" data-route="atelier" data-anchor="at-press">Certifications</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="#inquire" data-route="inquire">Get in touch</a></li>
-          <li><a href="#inquire" data-route="inquire">Research collaborations</a></li>
-          <li><a href="#inquire" data-route="inquire">Fellowships &amp; internships</a></li>
           <li><a href="https://www.linkedin.com/in/angel-mebuge" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="mailto:angelmebuge13@gmail.com">angelmebuge13@gmail.com</a></li>
         </ul>
       </div>
+      <div>
+        <p class="footer-head">Site</p>
+        <p>Built by <a href="https://github.com/Brendanmebson" target="_blank" rel="noopener">brendanmebson</a>. Want a site like this? <a href="mailto:brendanmebson@gmail.com">brendanmebson@gmail.com</a></p>
+      </div>
     </div>
-    <div class="footer-base">
-      <span>&copy; <span id="year"></span> Angel Mebuge. All rights reserved.</span>
-      <span>Digital Health &amp; Data Analytics &middot; Nigeria</span>
-      <span>Made by <a class="footer-credit-link" href="https://github.com/Brendanmebson" target="_blank" rel="noopener">brendanmebson</a></span>
-      <span>Contact for your website development<br><a class="footer-credit-link" href="mailto:brendanmebson@gmail.com">brendanmebson@gmail.com</a></span>
-    </div>
+    <p class="footer-mark" aria-hidden="true">Angel Mebuge</p>
+    <p class="footer-legal">&copy; <span id="year">2026</span> Angel Mebuge</p>
   </div>
 </footer>
 
-<!-- Project Details Modal -->
-<div id="projectModal" class="proj-modal" role="dialog" aria-modal="true" aria-label="Project details" onclick="closeProjIfBg(event)">
-  <div class="proj-modal-inner">
-    <button class="proj-modal-close" onclick="closeProjModal()" aria-label="Close modal">&times;</button>
-    <div id="projModalContent"></div>
+<!-- Case study dialog -->
+<dialog class="case-dialog" id="caseDialog" aria-labelledby="caseDialogTitle">
+  <div class="dialog-bar">
+    <p class="dialog-kind" id="caseDialogKind"></p>
+    <button class="dialog-close" type="button" data-close>Close</button>
   </div>
-</div>
+  <div id="caseDialogBody"></div>
+</dialog>
 
-<script src="templatemo-628-lumen-script.js"></script>
-<script>
-  function openCert(src, title) {
-    document.getElementById('certLightboxImg').src = src;
-    document.getElementById('certLightboxTitle').textContent = title;
-    const lb = document.getElementById('certLightbox');
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lb.focus();
-  }
-  function closeCert() {
-    document.getElementById('certLightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeCertIfBg(e) {
-    if (e.target === document.getElementById('certLightbox')) closeCert();
-  }
+<!-- Certificate dialog -->
+<dialog class="cert-dialog" id="certDialog" aria-labelledby="certDialogTitle">
+  <div class="dialog-bar">
+    <p class="dialog-kind" id="certDialogTitle"></p>
+    <button class="dialog-close" type="button" data-close>Close</button>
+  </div>
+  <img id="certDialogImg" src="" alt="">
+</dialog>
 
-  const PROJECTS_DATA = {
-    hopewell: {
-      title: "HopeWell Health Initiative — Data Analysis & Recommendations",
-      subtitle: "Data Analytics · Community Health · Team Leadership",
-      tags: ["Excel", "Data Analysis", "Data Visualization", "Team Leadership"],
-      images: [
-        "project1/Screenshot%202026-10-10%20at%2019.14.06.png",
-        "project1/Screenshot%202026-10-10%20at%2019.14.25.png",
-        "project1/Screenshot%202026-10-10%20at%2019.14.39.png",
-        "project1/Screenshot%202026-10-10%20at%2019.14.52.png",
-        "project1/Screenshot%202026-10-10%20at%2019.15.15.png"
-      ],
-      overview: "A team-based data analytics project completed as part of the Data for Impact Bootcamp, using data from HopeWell Health Initiative, a Nigerian NGO that runs community health outreach programmes.<br><br>The project involved analysing programme data to understand outreach performance, identify key findings, and develop recommendations that could support future programme planning and decision-making.",
-      involved: [
-        "Cleaning and preparing the programme data",
-        "Analysing the available health programme data",
-        "Identifying patterns and key findings from the analysis",
-        "Creating data visualizations to communicate the findings",
-        "Developing insights and recommendations",
-        "Preparing a presentation of the analysis and findings"
-      ],
-      tools: "Microsoft Excel · PowerPoint",
-      objective: "To analyse HopeWell Health Initiative’s community health programme data, identify meaningful insights from the analysis, and develop recommendations to support programme planning and decision-making.",
-      role: "Team Lead & Data Analyst",
-      roleDesc: "As the team lead, I coordinated the different stages of the project and guided team members through the data preparation and analysis process.",
-      responsibilities: [
-        "Facilitating the data cleaning and preparation process",
-        "Guiding team members through the data analysis",
-        "Personally carrying out the data visualization",
-        "Identifying key insights from the analysis",
-        "Developing the recommendations",
-        "Preparing the PowerPoint presentation",
-        "Presenting the team’s findings"
-      ],
-      deliverables: [
-        "Cleaned and analysed dataset",
-        "Data visualizations",
-        "Insights and recommendations",
-        "PowerPoint presentation",
-        "Final project presentation"
-      ],
-      link: "https://docs.google.com/spreadsheets/d/1dbwV8XDvp3eEd5A-BOdSX-7mPAGMYO-3/edit?usp=sharing&ouid=110267573420317805113&rtpof=true&sd=true",
-      linkText: "View Project on Google Sheets &rarr;"
-    },
-    superstore: {
-      title: "Superstore Sales Data Analysis",
-      subtitle: "Excel · Sales Analytics · Data Analysis",
-      tags: ["Excel", "Sales Analytics", "Data Analysis"],
-      images: [
-        "project2/Screenshot%202026-10-10%20at%2019.16.29.png",
-        "project2/Screenshot%202026-10-10%20at%2019.16.49.png",
-        "project2/Screenshot%202026-10-10%20at%2019.17.03.png"
-      ],
-      overview: "This project involved analysing sales data from a superstore to understand sales performance and identify patterns within the business data.<br><br>The analysis focused on using the available sales information to understand what was happening across the business and translate the data into insights and recommendations that could support decision-making.",
-      involved: [
-        "Reviewing and preparing the sales dataset",
-        "Analysing sales performance",
-        "Examining patterns and trends within the sales data",
-        "Identifying areas of stronger and weaker performance",
-        "Using data to generate business insights",
-        "Developing recommendations based on the findings",
-        "Communicating the results of the analysis"
-      ],
-      tools: "Microsoft Excel",
-      objective: "To analyse superstore sales data, identify patterns and trends in sales performance, and generate insights and recommendations that can support business decision-making.",
-      role: "Sole Data Analyst",
-      roleDesc: "Sole data analyst focused on working with the sales dataset, analysing the information, and translating the results into meaningful business insights and recommendations.",
-      deliverables: [
-        "Excel data analysis",
-        "Sales insights",
-        "Recommendations"
-      ],
-      link: "https://docs.google.com/spreadsheets/d/1YjK-Ut2Ag7bNeoLdw8czRqn5UqW7lBOJ/edit?usp=sharing&ouid=110267573420317805113&rtpof=true&sd=true",
-      linkText: "View Project on Google Sheets &rarr;"
-    },
-    supplier: {
-      title: "Supplier Quality Analysis Dashboard",
-      subtitle: "Power BI · Data Analysis · Data Visualization",
-      tags: ["Power BI", "Data Analysis", "Data Visualization"],
-      overview: "A Power BI project focused on helping a manufacturing company understand supplier quality and the operational impact of defective raw materials.<br><br>The project used consolidated data from different plants covering materials, defects, vendors, defective-material quantities, and downtime associated with defective materials. The objective was to visualize the data, identify patterns, and provide insights that could help management understand supplier quality performance.",
-      involved: [
-        "Reviewing and preparing the supplied dataset",
-        "Analysing supplier, material, defect, and plant-level data",
-        "Examining defective material quantities",
-        "Analysing downtime associated with defective materials",
-        "Creating interactive visualizations in Power BI",
-        "Identifying patterns and insights from the data",
-        "Presenting the findings through the dashboard"
-      ],
-      tools: "Microsoft Power BI",
-      objective: "To analyse and visualize supplier quality data across plants, materials, and vendors, with particular attention to defects and the downtime associated with defective materials.",
-      role: "Sole Data Analyst & Dashboard Developer",
-      roleDesc: "I independently completed the project from data preparation and analysis through to dashboard development and visualization. I worked with the supplied dataset, analysed the relevant supplier quality metrics, created the Power BI visuals and dashboard, and interpreted the findings to communicate key insights from the data.",
-      deliverables: [
-        "Data preparation and analysis",
-        "Interactive Power BI dashboard",
-        "Data visualizations",
-        "Key insights from the analysis"
-      ],
-      link: "https://drive.google.com/file/d/1FTqg-Q5NBRKprDIwdNkKblKZiSJ-f_fO/view?usp=sharing",
-      linkText: "View Dashboard on Google Drive &rarr;"
-    },
-    jaundice: {
-      title: "Digital Health Innovation Project",
-      subtitle: "Child Health · Digital Health · Neonatal Care",
-      tags: ["Digital Health", "Child Health", "Health Innovation", "Responsible AI"],
-      overview: "This is a digital health concept focused on exploring how a phone-based tool could support the early identification of potential neonatal jaundice, particularly in newborns with darker skin.<br><br>The concept is designed around caregivers and frontline health workers who may need additional support in recognising possible signs of jaundice and knowing when to seek further clinical assessment.<br><br>The tool is intended as a risk-screening and care-seeking support tool, not a replacement for clinical diagnosis or laboratory-based assessment.",
-      involved: [
-        "Guided capture of photographs of the newborn",
-        "Use of multiple body areas to support assessment",
-        "A calibration process using a white reference",
-        "Risk-level indications to support next steps",
-        "Reminders for reassessment",
-        "Information to address common misconceptions about neonatal jaundice",
-        "Support for locating appropriate healthcare services"
-      ],
-      note: "The longer-term concept includes exploring computer vision and deep learning for image-based assessment, but these technologies are not currently embedded in the project.",
-      focus: "Neonatal Health · Child Health · Digital Health · Responsible AI",
-      users: ["Parents and caregivers", "Nurses and midwives", "Community health workers"],
-      geo: "Nigeria initially, with potential relevance to other African contexts.",
-      objective: "To explore a digital approach that could support earlier recognition of potential neonatal jaundice and encourage timely care-seeking, particularly in contexts where visual identification may be more difficult for newborns with darker skin.",
-      role: "Digital Health Project Lead / Creator",
-      roleDesc: "I initiated and developed the concept, defining the problem, intended users, proposed solution, and key features. I have also worked on the concept’s product direction and explored how responsible AI could eventually support image-based assessment.",
-      stage: "Concept / Pre-product",
-      link: "https://www.figma.com/proto/qrVv6ZsVkn3HINncL3Vu6h?node-id=127:3",
-      linkText: "View Figma Prototype &rarr;"
-    }
-  };
-
-  function buildProjectGallery(images, title) {
-    if (!images || !images.length) return '';
-
-    const slides = images.map((src, index) => `
-      <div class="proj-slide ${index === 0 ? 'active' : ''}" data-index="${index}">
-        <img src="${src}" alt="${title} image ${index + 1}" loading="lazy">
-      </div>
-    `).join('');
-
-    const dots = images.map((_, index) => `
-      <button class="proj-dot ${index === 0 ? 'active' : ''}" type="button" data-index="${index}" aria-label="View image ${index + 1}" aria-pressed="${index === 0}"></button>
-    `).join('');
-
-    return `
-      <div class="proj-gallery" aria-label="${title} gallery">
-        <div class="proj-gallery-stage">${slides}</div>
-        <div class="proj-gallery-controls">
-          <button type="button" class="proj-gallery-btn proj-gallery-prev" aria-label="Previous image">&#8592;</button>
-          <button type="button" class="proj-gallery-btn proj-gallery-next" aria-label="Next image">&#8594;</button>
-        </div>
-        <div class="proj-gallery-dots">${dots}</div>
-      </div>
-    `;
-  }
-
-  function initProjectGallery(gallery) {
-    const slides = Array.from(gallery.querySelectorAll('.proj-slide'));
-    const dots = Array.from(gallery.querySelectorAll('.proj-dot'));
-    const prevBtn = gallery.querySelector('.proj-gallery-prev');
-    const nextBtn = gallery.querySelector('.proj-gallery-next');
-
-    if (!slides.length || !prevBtn || !nextBtn) return;
-
-    let currentIndex = 0;
-    let autoScroll = null;
-
-    function showSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle('active', slideIndex === currentIndex);
-      });
-      dots.forEach((dot, dotIndex) => {
-        const isActive = dotIndex === currentIndex;
-        dot.classList.toggle('active', isActive);
-        dot.setAttribute('aria-pressed', String(isActive));
-      });
-    }
-
-    function stopAutoScroll() {
-      if (autoScroll) {
-        clearInterval(autoScroll);
-        autoScroll = null;
-      }
-    }
-
-    function startAutoScroll() {
-      stopAutoScroll();
-      autoScroll = setInterval(() => showSlide(currentIndex + 1), 4000);
-    }
-
-    prevBtn.addEventListener('click', () => {
-      showSlide(currentIndex - 1);
-      startAutoScroll();
-    });
-
-    nextBtn.addEventListener('click', () => {
-      showSlide(currentIndex + 1);
-      startAutoScroll();
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        showSlide(Number(dot.dataset.index));
-        startAutoScroll();
-      });
-    });
-
-    gallery.addEventListener('mouseenter', stopAutoScroll);
-    gallery.addEventListener('mouseleave', startAutoScroll);
-    gallery.__projectGalleryStop = stopAutoScroll;
-
-    showSlide(0);
-    startAutoScroll();
-  }
-
-  function openProjectModal(id) {
-    document.querySelectorAll('.proj-gallery').forEach(gallery => {
-      if (gallery.__projectGalleryStop) gallery.__projectGalleryStop();
-    });
-
-    const p = PROJECTS_DATA[id];
-    if (!p) return;
-    
-    let html = `
-      <div class="proj-modal-header">
-        <div class="proj-modal-cat">${p.subtitle}</div>
-        <h3 class="proj-modal-title">${p.title}</h3>
-        <div class="card-tags" style="margin-top:12px;">
-          ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
-      </div>
-      <div class="proj-modal-body">
-        ${buildProjectGallery(p.images, p.title)}
-        <h4>Project Overview</h4>
-        <p>${p.overview}</p>
-        
-        ${p.involved ? `
-          <h4>What the Project Involved</h4>
-          <ul>${p.involved.map(item => `<li>${item}</li>`).join('')}</ul>
-        ` : ''}
-        
-        ${p.note ? `<p><em>${p.note}</em></p>` : ''}
-        
-        ${p.tools ? `
-          <h4>Tools</h4>
-          <p>${p.tools}</p>
-        ` : ''}
-        
-        ${p.focus ? `
-          <h4>Project Focus</h4>
-          <p>${p.focus}</p>
-        ` : ''}
-        
-        ${p.users ? `
-          <h4>Intended Users</h4>
-          <ul>${p.users.map(u => `<li>${u}</li>`).join('')}</ul>
-        ` : ''}
-        
-        ${p.geo ? `
-          <h4>Geographic Focus</h4>
-          <p>${p.geo}</p>
-        ` : ''}
-        
-        ${p.objective ? `
-          <h4>Project Objective</h4>
-          <p>${p.objective}</p>
-        ` : ''}
-        
-        ${p.role ? `
-          <h4>My Role</h4>
-          <p><strong>${p.role}</strong> &mdash; ${p.roleDesc}</p>
-          ${p.responsibilities ? `
-            <ul>${p.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul>
-          ` : ''}
-        ` : ''}
-        
-        ${p.deliverables ? `
-          <h4>Deliverables</h4>
-          <ul>${p.deliverables.map(d => `<li>${d}</li>`).join('')}</ul>
-        ` : ''}
-        
-        ${p.stage ? `
-          <h4>Current Stage</h4>
-          <p><strong>${p.stage}</strong></p>
-        ` : ''}
-      </div>
-      <div class="proj-modal-footer">
-        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="btn btn-solid">${p.linkText}</a>` : ''}
-        <button class="btn" onclick="closeProjModal()">Close</button>
-      </div>
-    `;
-    
-    document.getElementById('projModalContent').innerHTML = html;
-    const gallery = document.querySelector('.proj-gallery');
-    if (gallery) initProjectGallery(gallery);
-
-    const modal = document.getElementById('projectModal');
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeProjModal() {
-    document.querySelectorAll('.proj-gallery').forEach(gallery => {
-      if (gallery.__projectGalleryStop) gallery.__projectGalleryStop();
-    });
-    document.getElementById('projectModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function closeProjIfBg(e) {
-    if (e.target === document.getElementById('projectModal')) closeProjModal();
-  }
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeCert();
-      closeProjModal();
-    }
-  });
-</script>
+<script src="main.js"></script>
 </body>
 </html>
