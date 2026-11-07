@@ -100,6 +100,28 @@ ul { list-style: none; }
 .text-link:hover { color: var(--crimson); text-underline-offset: 7px; }
 .text-link:hover::after { transform: translate(2px, -2px); }
 
+/* ============ SUPPORT BUTTON ============ */
+.coffee-btn {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: 6px;
+  min-height: 40px;
+  font: 500 var(--step-small)/1 var(--font-text);
+  white-space: nowrap;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.coffee-btn svg { width: 16px; height: 16px; }
+.coffee-btn:hover { color: var(--violet-deep); text-decoration: underline; text-underline-offset: 4px; }
+.coffee-btn:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; }
+.contact .coffee-btn, .site-footer .coffee-btn { color: var(--on-dark-muted); }
+.contact .coffee-btn:hover, .site-footer .coffee-btn:hover { color: #fff; }
+.main-nav .coffee-btn { margin-left: 16px; }
+.contact-support, .mobile-nav .coffee-btn { margin-top: 16px; justify-self: start; }
+.contact-support { display: block; }
+
 /* ============ HEADER ============ */
 .site-header {
   position: sticky;
@@ -112,14 +134,14 @@ ul { list-style: none; }
 .header-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .wordmark { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; text-decoration: none; }
 .main-nav { display: flex; align-items: center; gap: 4px; }
-.main-nav a {
+.main-nav a:not(.coffee-btn) {
   padding: 10px 14px;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
 }
-.main-nav a:hover, .main-nav a.is-active { color: var(--violet-deep); }
+.main-nav a:not(.coffee-btn):hover, .main-nav a.is-active { color: var(--violet-deep); }
 .main-nav a.is-active { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
 .main-nav .nav-action { margin-left: 12px; background: var(--crimson); color: #fff; padding: 10px 18px; transition: background-color 0.25s; }
 .main-nav .nav-action:hover { background: var(--ink); color: #fff; }
@@ -350,8 +372,8 @@ button.cert:hover .cert-name { color: var(--violet-deep); }
 .footer-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; font-size: var(--step-small); color: var(--on-dark-muted); }
 .footer-cols .footer-head { color: #fff; font-weight: 600; margin-bottom: 8px; }
 .footer-cols li + li { margin-top: 4px; }
-.footer-cols a { color: #fff; text-underline-offset: 4px; }
-.footer-cols a:hover { color: var(--on-dark-muted); }
+.footer-cols a:not(.coffee-btn) { color: #fff; text-underline-offset: 4px; }
+.footer-cols a:not(.coffee-btn):hover { color: var(--on-dark-muted); }
 .footer-mark {
   margin-top: clamp(72px, 10vw, 160px);
   font-family: var(--font-display);
@@ -363,7 +385,10 @@ button.cert:hover .cert-name { color: var(--violet-deep); }
   margin-left: -0.05em;
   color: #fff;
 }
-.footer-legal { padding-block: 28px 32px; font-size: var(--step-small); color: var(--on-dark-muted); }
+.footer-legal { padding-top: 28px; font-size: var(--step-small); color: var(--on-dark-muted); }
+.footer-credit { padding-block: 6px 32px; font-size: var(--step-small); color: var(--on-dark-muted); }
+.footer-credit a { color: #fff; text-underline-offset: 4px; }
+.footer-credit a:hover { color: var(--on-dark-muted); }
 
 /* ============ DIALOGS ============ */
 dialog {
@@ -464,7 +489,7 @@ dialog[open] { animation: dialogIn 0.35s var(--ease-out); }
     padding: 24px var(--margin);
     background: var(--bg);
   }
-  .mobile-nav a {
+  .mobile-nav a:not(.coffee-btn) {
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 44px;
@@ -472,7 +497,7 @@ dialog[open] { animation: dialogIn 0.35s var(--ease-out); }
     text-decoration: none;
     padding-block: 6px;
   }
-  .mobile-nav a:active { color: var(--violet-deep); }
+  .mobile-nav a:not(.coffee-btn):active { color: var(--violet-deep); }
 
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .hero-name { font-size: clamp(76px, 23vw, 176px); }
@@ -509,6 +534,7 @@ dialog[open] { animation: dialogIn 0.35s var(--ease-out); }
   .contact-email { font-size: 11vw; }
   .contact-form .btn { width: 100%; }
   .footer-mark { font-size: 18.2vw; }
+  .footer-support { grid-column: 1 / -1; }
   .cd-facts { grid-template-columns: 1fr; }
   .case-dialog, .cert-dialog { width: 100%; max-width: 100%; max-height: 100svh; height: 100svh; margin: 0; }
 }
