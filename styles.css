@@ -116,11 +116,8 @@ ul { list-style: none; }
 .coffee-btn svg { width: 16px; height: 16px; }
 .coffee-btn:hover { color: var(--violet-deep); text-decoration: underline; text-underline-offset: 4px; }
 .coffee-btn:focus-visible { outline: 2px solid var(--crimson); outline-offset: 3px; }
-.contact .coffee-btn, .site-footer .coffee-btn { color: var(--on-dark-muted); }
-.contact .coffee-btn:hover, .site-footer .coffee-btn:hover { color: #fff; }
-.main-nav .coffee-btn { margin-left: 16px; }
-.contact-support, .mobile-nav .coffee-btn { margin-top: 16px; justify-self: start; }
-.contact-support { display: block; }
+.site-footer .coffee-btn { color: var(--on-dark-muted); }
+.site-footer .coffee-btn:hover { color: #fff; }
 
 /* ============ HEADER ============ */
 .site-header {
